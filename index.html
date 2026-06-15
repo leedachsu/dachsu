@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exhibition Credits</title>
+
+<style>
+
+#visitorList{
+
+margin-top:30px;
+
+}
+
+#visitorList .person{
+
+margin:6px 0;
+
+font-size:18px;
+}
+
+body {
+    font-family: 'Noto Serif KR', serif;
+}
+
+
+.hint{
+    font-size:55px;
+    font-weight:700;
+    margin-bottom:5px;
+}
+.section{
+    text-align:right;
+    padding-right:120px;
+    margin-bottom:100px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:black;
+    color:white;
+    font-family:Arial, sans-serif;
+    overflow:hidden;
+}
+
+.container{
+    width:100vw;
+    height:100vh;
+    display:flex;
+}
+
+/* 사진 영역 */
+
+.left{
+    width:45%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    transform: translateX(50px);
+}
+
+.photo-wrapper{
+    width:100%;
+    height:80%;
+    position:relative;
+}
+
+.photo-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border-radius:0px;
+
+    position:absolute;
+
+    opacity:0;
+
+    transition:opacity 1.4s ease;
+}
+
+.photo-wrapper img.active{
+    opacity:1;
+}
+
+/* 크레딧 영역 */
+
+.right{
+    width:55%;
+    overflow:hidden;
+    position:relative;
+}
+
+.credit-container{
+    position:absolute;
+    width:100%;
+    animation:scrollCredits 40s linear infinite;
+}
+
+.section{
+    text-align:right;
+    padding-right:80px;
+}
+
+.project-title{
+    font-size:25px;
+    font-weight:bold;
+    margin-bottom:20px;
+    letter-spacing:2px;
+    text-align:right;
+}
+.project-title{
+    text-align:right;
+}
+
+.member{
+    text-align:right;
+}
+.member{
+    font-size:15px;
+    margin:10px 0;
+    opacity:0.9;
+}
+
+.special{
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.end{
+    font-size:70px;
+    margin-top:100px;
+    letter-spacing:8px;
+}
+
+@keyframes scrollCredits{
+
+    from{
+        transform:translateY(100vh);
+    }
+
+    to{
+        transform:translateY(-100%);
+    }
+
+}
+
+.project-title{
+    font-size:25px;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.project-subtitle{
+    font-size:25px;
+    margin-bottom:50px;
+}
+
+.role-line{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.role{
+    font-weight:800;   /* 직책만 볼드 */
+    font-size:15px;
+}
+
+.person-inline{
+    font-weight:400;   /* 이름은 일반체 */
+    font-size:15px;
+    margin-left:10px;
+}
+
+.role-title{
+    font-size:15px;
+    font-weight:700;
+    margin-top:30px;
+    margin-bottom:15px;
+}
+
+.person{
+    font-size:15px;
+    font-weight:400;
+    margin:5px 0;
+}
+
+.divider{
+    font-size:20px;
+    margin:15px 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- 사진 -->
+
+    <div class="left">
+
+        <div class="photo-wrapper">
+
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/A%EB%B0%98%2010%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide active">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/A%EB%B0%98%201%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/A%EB%B0%98%202%ED%8C%80%20%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/A%EB%B0%98%204%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/A%EB%B0%98%203%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84%20(1).jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/A%EB%B0%98%205%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.png" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/A%EB%B0%98%206%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.png" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/A%EB%B0%98%207%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.png" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/A%EB%B0%98%208%ED%8C%80%20%ED%8C%80%20%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/A%EB%B0%98%209%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/B%EB%B0%98%201%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/B%EB%B0%98%202%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.png" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/B%EB%B0%98%203%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/B%EB%B0%98%204%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.png" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/B%EB%B0%98%205%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/B%EB%B0%98%206%ED%8C%80%20%EB%8B%A8%EC%B2%B4%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/B%EB%B0%98%207%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/B%EB%B0%98%208%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/B%EB%B0%98%209%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+            <img src="https://raw.githubusercontent.com/BAPJEUNGDOK/BAPZUO/refs/heads/main/B%EB%B0%98%2010%ED%8C%80%20%ED%8C%80%EC%82%AC%EC%A7%84.jpg" class="slide">
+
+        </div>
+
+    </div>
+
+    <!-- 크레딧 -->
+
+    <div class="right">
+
+        <div class="credit-container">
+
+            <div class="section">
+
+                <div class="hint">
+                    HINT
+                </div>
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    물길 위의 공존
+                </div>
+
+                <div class="member">YANG YE WON</div>
+                <div class="member">NAM SEUNG HYUN</div>
+                <div class="member">LEE DO KYUNG</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    다랭이의 물길, 삶의 흐름
+                </div>
+
+                <div class="member">CHO SOO MIN</div>
+                <div class="member">CHOI DING JU</div>
+                <div class="member">HAM SU HYEON</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    Allostasis
+                </div>
+
+                <div class="member">KIM EUN SOO</div>
+                <div class="member">KIM MIN SEON</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    막[膜]: 시간을 빚는 양조장
+                </div>
+
+                <div class="member">GWON YE RIM</div>
+                <div class="member">SEOL SEUNG SEO</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    틈, 유구에 스민 시간
+                </div>
+
+                <div class="member">RYU YEON JEONG</div>
+                <div class="member">CHOI EUN JIN</div>
+                <div class="member">KIM TAE HEE</div>
+               
+            </div>
+<!--durl-->
+            <div class="section">
+
+                <div class="project-title">
+                    하얀 숨결이 스민 탕(湯)
+                </div>
+
+                <div class="member">KIM CHAE WON</div>
+                <div class="member">CHOI YU JEONG</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    고운사 : 사라져, 비로소 남다.
+                </div>
+
+                <div class="member">KIM GA YEON</div>
+                <div class="member">LIM JI WON</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    진실이 가려진 흐름 위로, 信流
+                </div>
+
+                <div class="member">SIHN DA YEON</div>
+                <div class="member">CHOI JI AN</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    부재하는 것들의 침묵
+                </div>
+
+                <div class="member">KIM EUN JEONG</div>
+                <div class="member">DO HYUN BIN</div>
+                <div class="member">PARK GYU RI</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    交代作用 ; 다시 흐르는 시간
+                </div>
+
+                <div class="member">PARK SEO HYUN</div>
+                <div class="member">RYU EUN BEE</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    Ghost in the masquerade
+                </div>
+
+                <div class="member">KIM YEONG MI</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    은원[隱院] ; 틈새에 숨겨둔 안식의 웰니스 스테이
+                </div>
+
+                <div class="member">SHIN SEUNG HEE</div>
+                <div class="member">HWANG SUN HEE</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    空 ; 이후의 시간을 사는 이들에게
+                </div>
+
+                <div class="member">SHIM YE JIN</div>
+                <div class="member">KIM HYE RIN</div>
+                <div class="member">PARK CHAE HYUN</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    Palimpsest : 잊혀진 기억을 발견하는 도서관
+                </div>
+
+                <div class="member">JI SEUNG HYUN</div>
+                <div class="member">CHO YU JEONG</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    감각을 읽다, 세상을 잇다
+                </div>
+
+                <div class="member">SJANG HA KYEONG</div>
+                <div class="member">YOO MIN JI</div>
+                <div class="member">CHOI DO YUN</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    재조율 ; 낙원을 다시 울리다
+                </div>
+
+                <div class="member">HA MIN SEO</div>
+                <div class="member">KIM SEO JEONG</div>
+                <div class="member">YOON CHAE YEON</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    숨, 곁 : 마음이 닿는 거리
+                </div>
+
+                <div class="member">WE JI HYUN</div>
+                <div class="member">KANG HAE JEONG</div>
+                <div class="member">LIM JAE YEON</div>
+               
+            </div>
+
+            <!--Rmx-->
+
+            <div class="section">
+
+                <div class="project-title">
+                    CIRCUIT ; 고요의 시간을 지나
+                </div>
+
+                <div class="member">LEE SEO YEON</div>
+                <div class="member">KIM EUN WOO</div>
+                <div class="member">LIM SU YEON</div>
+               
+            </div>
+
+            <div class="section">
+
+                <div class="project-title">
+                    THE PIXEL ARCHIVE : SCENESCAPE
+                </div>
+
+                <div class="member">YOON JI HYUN</div>
+                <div class="member">PARK CHAE YEONG</div>
+                <div class="member">KIM YU MIN</div>
+
+            </div>
+
+           
+            <!--fb넣ㅇ을곳-->
+
+            <div class="section">
+
+                <div class="hint">
+                    PLANNING
+                </div>
+            
+                <div class="project-subtitle">
+                    인테리어디자인과 35회 졸업전시회 준비위원회
+                </div>
+                <div class="divider">────</div>
+                <div class="role-line">
+                    <span class="role">학회장</span>
+                    <span class="person-inline">YOO MIN JI</span>
+                </div>
+            
+                <div class="divider">────</div>
+            
+                <div class="role-line">
+                    <span class="role">부학회장</span>
+                    <span class="person-inline">SEOL SEUNG SEO</span>
+                </div>
+            
+                <div class="divider">────</div>
+            
+                <div class="role-title">
+                    디자인팀
+                </div>
+            
+                <div class="person">GWON YE RIM</div>
+                <div class="person">KIM EUN WOO</div>
+                <div class="person">KANG HAE JEONG</div>
+            
+                <div class="divider">────</div>
+            
+                <div class="role-line">
+                    <span class="role">기획팀</span>
+                    <span class="person-inline">KIM HYE RIN</span>
+                </div>
+            
+            </div>
+            
+            <div class="section">
+
+                <div class="hint">
+                    SPECIAL THANKS
+                </div>
+
+                <div id = "visitorList"><div></div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type = "module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+onValue
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAkpd4vM0-5uK_ZGmUc9WuEok9wIUjJQRs",
+  authDomain: "babjuo-b1a77.firebaseapp.com",
+  databaseURL: "https://babjuo-b1a77-default-rtdb.firebaseio.com",
+  projectId: "babjuo-b1a77",
+  storageBucket: "babjuo-b1a77.firebasestorage.app",
+  messagingSenderId: "876006426465",
+  appId: "1:876006426465:web:8d26d1eaa960c633762720"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+const slides = document.querySelectorAll(".slide");
+
+let current = 0;
+
+setInterval(()=>{
+
+    slides[current].classList.remove("active");
+
+    current++;
+
+    if(current >= slides.length){
+        current = 0;
+    }
+
+    slides[current].classList.add("active");
+
+},2800);
+
+const visitorList =
+document.getElementById("visitorList");
+
+onValue(ref(db,"visitors"),(snapshot)=>{
+
+    visitorList.innerHTML="";
+
+    snapshot.forEach((child)=>{
+
+        const div =
+        document.createElement("div");
+
+        div.className="person";
+
+        div.textContent =
+        child.val().name;
+
+        visitorList.appendChild(div);
+
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>방명록</title>
+
+<style>
+
+#message{
+
+margin-top:20px;
+
+opacity:0;
+
+transition:0.5s;
+
+font-size:24px;
+
+color:white;
+}
+
+body{
+    background:black;
+    color:white;
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    font-family:sans-serif;
+}
+
+input{
+    width:300px;
+    padding:15px;
+    font-size:20px;
+}
+
+button{
+    margin-top:20px;
+
+    padding:15px 40px;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>이름을 남겨주세요</h1>
+
+<input id="nameInput">
+
+<button id="submitBtn">
+등록
+</button>
+
+<div id = "message"> 감사합니다 </div>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+push
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAkpd4vM0-5uK_ZGmUc9WuEok9wIUjJQRs",
+  authDomain: "babjuo-b1a77.firebaseapp.com",
+  databaseURL: "https://babjuo-b1a77-default-rtdb.firebaseio.com",
+  projectId: "babjuo-b1a77",
+  storageBucket: "babjuo-b1a77.firebasestorage.app",
+  messagingSenderId: "876006426465",
+  appId: "1:876006426465:web:8d26d1eaa960c633762720"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+document
+.getElementById("submitBtn")
+.addEventListener("click",()=>{
+
+const name =
+document.getElementById("nameInput").value;
+
+if(name==="") return;
+
+push(
+ref(db,"visitors"),
+{
+name:name,
+time:Date.now()
+}
+);
+
+document.getElementById("nameInput").value="";
+const message =
+document.getElementById("message");
+
+message.style.opacity = "1";
+
+setTimeout(()=>{
+
+    message.style.opacity = "0";
+
+},3000);
+});
+
+document
+.getElementById("nameInput")
+.addEventListener("keypress",(e)=>{
+
+    if(e.key==="Enter"){
+
+        document
+        .getElementById("submitBtn")
+        .click();
+
+    }
+
+});
+</script>
+
+</body>
+</html>
