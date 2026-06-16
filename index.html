@@ -544,6 +544,16 @@ onValue
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+onValue
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAkpd4vM0-5uK_ZGmUc9WuEok9wIUjJQRs",
   authDomain: "babjuo-b1a77.firebaseapp.com",
@@ -585,7 +595,12 @@ onValue(ref(db,"visitors"),(snapshot)=>{
 
     snapshot.forEach((child)=>{
 
-        const div =
+        const data = child.val();
+
+        if(data.hidden){
+            return;
+        }
+        const div = 
         document.createElement("div");
 
         div.className="person";
