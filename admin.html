@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>방명록</title>
+
+<style>
+
+body{
+    background:black;
+    color:white;
+    font-family:sans-serif;
+    padding:50px;
+}
+
+h1{
+    margin-bottom:40px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:15px;
+    border-bottom:1px solid #333;
+    text-align:left;
+}
+
+th{
+    font-size:20px;
+}
+
+td{
+    font-size:18px;
+}
+
+.total{
+    margin-bottom:30px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+button{
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    color:white;
+    margin-right:8px;
+}
+
+.hide-btn{
+    background:#616161;
+}
+
+.restore-btn{
+    background:#2e7d32;
+}
+
+.delete-btn{
+    background:#d32f2f;
+}
+
+button:hover{
+    opacity:0.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>방명록</h1>
+
+<div class="total" id="total">
+총 방문자 : 0명
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+    <th>이름</th>
+    <th>등록시간</th>
+    <th>상태</th>
+    <th>관리</th>
+</tr>
+
+</thead>
+
+<tbody id="visitorTable">
+</tbody>
+
+</table>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    onValue,
+    update,
+    remove
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAkpd4vM0-5uK_ZGmUc9WuEok9wIUjJQRs",
+  authDomain: "babjuo-b1a77.firebaseapp.com",
+  databaseURL: "https://babjuo-b1a77-default-rtdb.firebaseio.com",
+  projectId: "babjuo-b1a77",
+  storageBucket: "babjuo-b1a77.firebasestorage.app",
+  messagingSenderId: "876006426465",
+  appId: "1:876006426465:web:8d26d1eaa960c633762720"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const table =
+document.getElementById("visitorTable");
+
+const total =
+document.getElementById("total");
+
+onValue(ref(db,"visitors"),(snapshot)=>{
+
+    table.innerHTML="";
+
+    let count = 0;
+
+    snapshot.forEach((child)=>{
+
+        count++;
+
+        const data = child.val();
+
+        const date =
+        new Date(data.time);
+
+        const timeString =
+        date.toLocaleString("ko-KR");
+
+        const row =
+        document.createElement("tr");
+
+        row.innerHTML = `
+
+            <td>${data.name}</td>
+
+            <td>${timeString}</td>
+
+            <td>
+                ${data.hidden ? "" : "표시중"}
+            </td>
+
+            <td>
+
+                ${
+                    data.hidden
+                    ? `<button class="restore-btn" onclick="window.showVisitor('${child.key}')">복원</button>`
+                    : `<button class="hide-btn" onclick="window.hideVisitor('${child.key}')">숨김</button>`
+                }
+
+                <button class="delete-btn" onclick="window.deleteVisitor('${child.key}')">
+                    삭제
+                </button>
+
+            </td>
+
+        `;
+
+        table.appendChild(row);
+
+    });
+
+    total.textContent =
+    `총 방문자 : ${count}명`;
+
+});
+
+window.hideVisitor = async function(key){
+
+    const check =
+    confirm("이 이름을 빔프로젝터에서 숨길까요?");
+
+    if(!check) return;
+
+    await update(
+        ref(db,`visitors/${key}`),
+        {
+            hidden:true
+        }
+    );
+
+}
+
+window.showVisitor = async function(key){
+
+    const check =
+    confirm("숨김을 해제할까요?");
+
+    if(!check) return;
+
+    await update(
+        ref(db,`visitors/${key}`),
+        {
+            hidden:false
+        }
+    );
+
+}
+
+window.deleteVisitor = async function(key){
+
+    const check =
+    confirm("정말 삭제할까요?");
+
+    if(!check) return;
+
+    await remove(
+        ref(db,`visitors/${key}`)
+    );
+
+}
+
+</script>
+
+</body>
+</html>
